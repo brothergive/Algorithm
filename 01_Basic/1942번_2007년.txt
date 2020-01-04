@@ -1,0 +1,27 @@
+#include<stdio.h>
+int main() {
+	//2007년 1월 1일 월요일
+	
+	int x, y,result=0;
+
+	int month[12] = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
+
+	//x, y  입력 받음
+	scanf("%d %d", &x,&y);
+	//입력 받은 월 이전 달들의 합
+	for (int i = 0; i < x-1; i++) {
+		result = result + month[i];
+	}
+	//printf("%d", result);
+	result = (result+y) % 7;
+	if (result == 1)printf("MON");
+	else if (result == 2)printf("TUE");
+	else if (result == 3)printf("WED");
+	else if (result == 4)printf("THU");
+	else if (result == 5)printf("FRI");
+	else if (result == 6)printf("SAT");
+	else  //(result == 0)
+		printf("SUN");
+	
+	return 0;
+}
